@@ -1,0 +1,11 @@
+name: ZJlab_LN_PDK
+channels:
+  - conda-forge
+dependencies:
+  - python>=3.8,<3.12
+  - numpy
+  - scipy
+  - phidl
+  - pip
+  - pip:
+      - -e .

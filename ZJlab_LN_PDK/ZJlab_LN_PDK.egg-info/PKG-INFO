@@ -1,0 +1,86 @@
+Metadata-Version: 2.4
+Name: ZJlab_LN_PDK
+Version: 0.1.0
+Summary: ZJlab Lithium Niobate Photonics PDK for layout and tapeout
+Author-email: Your Name or Lab <you@example.com>
+License: MIT
+Project-URL: homepage, https://github.com/your-org/ZJlab_LN_PDK
+Project-URL: repository, https://github.com/your-org/ZJlab_LN_PDK
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: phidl>=1.6
+Requires-Dist: numpy>=1.20
+Requires-Dist: scipy>=1.6
+
+# 🧠 ZJlab_LN_PDK
+
+ZJlab Lithium-Niobate Photonics Design Kit (PDK) for layout design, simulation, and tapeout.  
+This PDK provides parameterized device cells (PCells), technology definitions, and utilities for integration with layout tools such as **PHIDL**.
+
+---
+
+## 📁 Repository Structure
+
+```
+ZJlab_LN_PDK/
+├── zjlab_ln/          # Main PDK Python package
+│   ├── __init__.py
+│   ├── active/         # Parameterized device cells
+│   ├── passive/          # Technology and process definitions
+│   └── layers/        # Layer mapping and utilities
+├── environment.yml    # Conda environment specification
+├── pyproject.toml     # Python package metadata
+└── README.md          # This file
+```
+
+---
+
+## ⚙️ Installation
+
+### 1. Create and activate Conda environment
+```bash
+conda env create -f environment.yml
+conda activate ZJlab_LN_PDK
+```
+
+### 2. Install the PDK package (editable mode)
+This step is included in the environment file, but you can also run manually:
+```bash
+pip install -e .
+```
+
+---
+
+## 🧩 Usage Example
+
+After activating the environment:
+
+```python
+import zjlab_ln
+
+# Example: load a cell or layer definition
+from zjlab_ln.cells import ring_resonator
+device = ring_resonator(radius=50)
+device.show()
+```
+
+or from the command line:
+
+```bash
+python -c "import zjlab_ln; print('✅ ZJlab LN PDK loaded successfully!')"
+```
+
+---
+
+## 🧱 Requirements
+
+- **Python** ≥ 3.8 (tested up to 3.11)
+- **Conda** for environment management  
+- Dependencies:
+  - [PHIDL](https://github.com/amccaugh/phidl)
+  - [NumPy](https://numpy.org/)
+  - [SciPy](https://scipy.org/)
+  - [KLayout](https://www.klayout.de/)
+  - [Gdstk](https://pypi.org/project/gdstk/)
+
+---
